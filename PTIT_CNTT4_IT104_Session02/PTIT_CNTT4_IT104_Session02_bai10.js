@@ -19,32 +19,35 @@ const products = [
 function getOrderSummary(products) {
   let totalBeforeDiscount = 0;
   let totalAfterDiscount = 0;
-  const details = [];
 
-  for (const product of products) {
-    const { name, price, discount, quantity, bulkDiscount } = product;
-
-    let finalPrice;
-
-    if (bulkDiscount && quantity >= bulkDiscount.minQuantity) {
-      finalPrice = price * (1 - bulkDiscount.extraDiscount);
-    } else {
-      finalPrice = price * (1 - discount);
-    }
-
-    const roundedFinalPrice = Math.round(finalPrice);
-    const subtotal = roundedFinalPrice * quantity;
-
-    totalBeforeDiscount += price * quantity;
-    totalAfterDiscount += subtotal;
-
-    details.push({
+  const details = products.map(
+    ({
       name,
-      finalPrice: roundedFinalPrice,
+      price,
+      discount,
       quantity,
-      subtotal,
-    });
-  }
+      bulkDiscount = { minQuantity: 0, extraDiscount: 0 }, 
+    }) => {
+      const { minQuantity, extraDiscount } = bulkDiscount;
+
+      const totalDiscount =
+        quantity >= minQuantity ? discount + extraDiscount : discount;
+
+      const rawFinalPrice = price * (1 - totalDiscount);
+      const finalPrice = Math.round(rawFinalPrice);
+      const subtotal = finalPrice * quantity;
+
+      totalBeforeDiscount += price * quantity;
+      totalAfterDiscount += subtotal;
+
+      return {
+        name,
+        finalPrice,
+        quantity,
+        subtotal,
+      };
+    }
+  );
 
   return {
     totalBeforeDiscount,
@@ -52,5 +55,6 @@ function getOrderSummary(products) {
     details,
   };
 }
+
 
 console.log(getOrderSummary(products));

@@ -18,7 +18,7 @@ const displayUserInfo = ({
   job: { title = "unknown", company = "unknown" }={},
 }) => {
   console.log(
-    `${name} is ${age} years old,lives in ${city}, ${country} works as ${email} at ${phone}, and can be contacted via ${title} or ${company}.`
+    `${name} is ${age} years old,lives in ${city}, ${country} works as ${title} at ${company}, and can be contacted via ${email} or ${phone}.`
   );
 };
 displayUserInfo(user);
