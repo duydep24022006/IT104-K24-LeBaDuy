@@ -45,6 +45,7 @@ function printCourseReport(manager: CourseManager): void {
     console.log(`- Trạng thái: ${status}\n`);
   });
 }
+
 const manager: CourseManager = {
   schoolName: "Trung tâm KLTN",
   year: 2025,

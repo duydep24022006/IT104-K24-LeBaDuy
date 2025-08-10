@@ -67,7 +67,6 @@ const printInvoice = (invoice: Invoice): void => {
     const invoiceTotal = calculateInvoiceTotal(invoice).toLocaleString("vi-VN");
     console.log(`>> Tổng cộng hóa đơn: ${invoiceTotal} VND`);
 }
-// Tạo sản phẩm
 const shirt: Product = { id: "p1", name: "Áo sơ mi", price: 250000 };
 const jeans: Product = { id: "p2", name: "Quần jean", price: 400000 };
 const dress: Product = { id: "p3", name: "Váy hoa", price: 700000 };
