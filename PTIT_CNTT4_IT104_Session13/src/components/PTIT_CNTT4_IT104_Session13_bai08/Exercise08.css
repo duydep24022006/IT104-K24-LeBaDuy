@@ -1,0 +1,55 @@
+.todolist-container {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+/* Định dạng cho các trạng thái */
+.status-pending {
+  background-color: #fbe9e7; /* Màu đỏ nhạt */
+  color: #c62828;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status-completed {
+  background-color: #e8f5e9; /* Màu xanh nhạt */
+  color: #2e7d32;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Định dạng cho các nút */
+button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btn-edit {
+  background-color: #ffc107; /* Màu vàng */
+}
+
+.btn-delete {
+  background-color: #f44336; /* Màu đỏ */
+}
