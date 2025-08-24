@@ -20,7 +20,7 @@ export default class Form extends Component<object, FormState> {
   handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value,
+      [name]: value
     });
   };
 
