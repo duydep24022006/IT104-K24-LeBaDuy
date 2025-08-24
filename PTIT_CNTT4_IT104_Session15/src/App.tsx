@@ -12,14 +12,21 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {/* <Exercise01 /> */}
-        {/* <Exercise02/> */}
-        {/* <Exercise03/> */} 
-        {/* <Exercise04/> */}
-        {/* <ListPost/> */}
-        {/* <Clock/> */}
-        {/* <Counter/> */}
-        <TodoListIndex/>
+        <Exercise01 /> <hr />
+        <br /> <hr />
+        <Exercise02 />
+        <hr /> <br /> <hr />
+        <Exercise03 /> <hr /> <br /> <hr />
+        <Exercise04 />
+        <hr /> <br /> <hr />
+        <ListPost />
+        <hr /> <br /> <hr />
+        <Clock />
+        <hr /> <br /> <hr />
+        <Counter />
+        <hr /> <br /> <hr />
+        <TodoListIndex />
+        <hr />
       </div>
     );
   }
