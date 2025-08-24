@@ -2,9 +2,9 @@ import React, { Component, ChangeEvent, FormEvent } from "react";
 import type { Todo } from "../TodoListIndex";
 
 interface AddTodoFormProps {
-  onAdd: (name: string) => boolean; // return true nếu thành công (để reset input)
-  onUpdate: (name: string) => boolean; // tương tự
-  editingTodo?: Todo; // nếu có -> đang ở chế độ cập nhật
+  onAdd: (name: string) => boolean;
+  onUpdate: (name: string) => boolean;
+  editingTodo?: Todo;
 }
 
 interface AddTodoFormState {
@@ -23,14 +23,12 @@ export default class AddTodoForm extends Component<
   }
 
   componentDidUpdate(prevProps: AddTodoFormProps) {
-    // Khi bấm "Sửa": set sẵn tên vào input
     if (
       this.props.editingTodo &&
       this.props.editingTodo !== prevProps.editingTodo
     ) {
       this.setState({ inputValue: this.props.editingTodo.name });
     }
-    // Khi thoát chế độ sửa (editingTodo từ có -> undefined): xóa input
     if (!this.props.editingTodo && prevProps.editingTodo) {
       this.setState({ inputValue: "" });
     }
