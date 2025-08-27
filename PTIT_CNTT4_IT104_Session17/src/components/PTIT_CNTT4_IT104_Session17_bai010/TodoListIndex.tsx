@@ -14,7 +14,6 @@ export default function TodoListIndex() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [editingTodo, setEditingTodo] = useState<Todo | undefined>(undefined);
 
-  // Load từ localStorage khi mount
   useEffect(() => {
     const raw = localStorage.getItem(LS_KEY);
     if (raw) {
@@ -97,7 +96,6 @@ export default function TodoListIndex() {
 
     const updated = todos.filter((t) => t.id !== id);
     setTodos(updated);
-
     if (editingTodo?.id === id) {
       setEditingTodo(undefined);
     }
