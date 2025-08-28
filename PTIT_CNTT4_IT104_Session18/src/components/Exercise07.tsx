@@ -54,7 +54,7 @@ export default function Exercise07() {
     const saved = loadTodos();
     dispatch({ type: ACTIONS.LOAD_TODOS, payload: saved });
   }, []);
-
+ 
   useEffect(() => {
     saveTodos(todos);
   }, [todos]);
