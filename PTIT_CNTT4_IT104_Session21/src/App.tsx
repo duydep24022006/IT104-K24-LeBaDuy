@@ -7,6 +7,7 @@ import Ex05 from './components/Ex05';
 import Ex06 from './components/Ex06';
 import Ex07 from './components/Ex07';
 import Ex08 from './components/Ex08';
+import BTTH from './components/BTTH';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Ex06 /> <br /> <hr /> <br />
       <Ex07 /> <br /> <hr /> <br />
       <Ex08 /> <br /> <hr /> <br />
+      <BTTH/>
     </div>
   );
 }
