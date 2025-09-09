@@ -8,15 +8,15 @@ export default function Layout() {
     <div className=" w-screen  h-screen flex gap-3 flex-col justify-center items-center">
       <header>
         <nav>
-          <NavLink to="/" className={linkStyle} end>
+          <NavLink to="/layout/" className={linkStyle} end>
             Home
           </NavLink>{" "}
           |{" "}
-          <NavLink to="/product" className={linkStyle}>
+          <NavLink to="/layout/product" className={linkStyle}>
             Product
           </NavLink>{" "}
           |{" "}
-          <NavLink to="/detail" className={linkStyle}>
+          <NavLink to="/layout/detail" className={linkStyle}>
             Detail
           </NavLink>{" "}
           |{" "}
