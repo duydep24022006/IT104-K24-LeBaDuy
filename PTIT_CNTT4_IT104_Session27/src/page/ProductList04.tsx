@@ -9,8 +9,8 @@ export default function ProductList04() {
         setInput(e.target.value);
     }
     useEffect(() => {
-      const q = params.get("name") || "";
-      setInput(q);
+      const name = params.get("name") || "";
+      setInput(name);
     }, [params]);
   const handleSearch = (e: React.FormEvent) => {
       e.preventDefault();
