@@ -1,0 +1,159 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Laptop Dell Inspiron 15",
+      "image": "https://example.com/images/dell-inspiron-15.jpg",
+      "price": 15000000,
+      "quantity": 10,
+      "created_at": "2025-09-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "product_name": "Điện thoại iPhone 15",
+      "image": "https://example.com/images/iphone-15.jpg",
+      "price": 28000000,
+      "quantity": 5,
+      "created_at": "2025-09-05T15:30:00Z"
+    },
+    {
+      "id": 3,
+      "product_name": "Tai nghe Sony WH-1000XM5",
+      "image": "https://example.com/images/sony-wh1000xm5.jpg",
+      "price": 7500000,
+      "quantity": 20,
+      "created_at": "2025-09-10T09:45:00Z"
+    },
+    {
+      "id": 4,
+      "product_name": "Bàn phím cơ Keychron K2",
+      "image": "https://example.com/images/keychron-k2.jpg",
+      "price": 2200000,
+      "quantity": 15,
+      "created_at": "2025-09-12T14:20:00Z"
+    },
+    {
+      "id": 5,
+      "product_name": "Chuột Logitech MX Master 3S",
+      "image": "https://example.com/images/logitech-mx-master-3s.jpg",
+      "price": 2500000,
+      "quantity": 30,
+      "created_at": "2025-09-15T08:10:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@example.com"
+    },
+    {
+      "id": 2,
+      "username": "duy",
+      "email": "duy@example.com"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "student_name": "Nguyễn Văn A",
+      "email": "vana@example.com",
+      "address": "Hà Nội",
+      "phone": "0912345678",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 2,
+      "student_name": "Trần Thị B",
+      "email": "thib@example.com",
+      "address": "TP. Hồ Chí Minh",
+      "phone": "0987654321",
+      "status": false,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 3,
+      "student_name": "Lê Văn C",
+      "email": "vanc@example.com",
+      "address": "Đà Nẵng",
+      "phone": "0901234567",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 4,
+      "student_name": "Phạm Thị D",
+      "email": "thid@example.com",
+      "address": "Cần Thơ",
+      "phone": "0934567890",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 5,
+      "student_name": "Hoàng Văn E",
+      "email": "vane@example.com",
+      "address": "Hải Phòng",
+      "phone": "0978123456",
+      "status": false,
+      "created_at": "2025-09-16"
+    },
+    {
+      "student_name": "Nguyễn Văn F",
+      "email": "f@example.com",
+      "address": "Huế",
+      "phone": "0911222333",
+      "status": true,
+      "id": 16
+    },
+    {
+      "student_name": "Nguyễn Văn F",
+      "email": "f@example.com",
+      "address": "Huế",
+      "phone": "0911222333",
+      "status": true,
+      "id": 24
+    },
+    {
+      "student_name": "Nguyễn Văn F",
+      "email": "f@example.com",
+      "address": "Huế",
+      "phone": "0911222333",
+      "status": true,
+      "id": 25
+    },
+    {
+      "student_name": "Nguyễn Văn F",
+      "email": "f@example.com",
+      "address": "Huế",
+      "phone": "0911222333",
+      "status": true,
+      "id": 26
+    },
+    {
+      "student_name": "Nguyễn Văn F",
+      "email": "f@example.com",
+      "address": "Huế",
+      "phone": "0911222333",
+      "status": true,
+      "id": 27
+    },
+    {
+      "student_name": "Nguyễn Văn F",
+      "email": "f@example.com",
+      "address": "Huế",
+      "phone": "0911222333",
+      "status": true,
+      "id": 29
+    },
+    {
+      "student_name": "Nguyễn Văn F",
+      "email": "f@example.com",
+      "address": "Huế",
+      "phone": "0911222333",
+      "status": true,
+      "id": 31
+    }
+  ]
+}
