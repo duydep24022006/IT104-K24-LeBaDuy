@@ -1,8 +1,7 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function ThemeMode() {
-  const themeMode = useSelector((state) => state.themeMode);
+  const themeMode = useSelector((state:any) => state.themeMode);
   const dispatch = useDispatch();
 
   const handleSetMode = () => {

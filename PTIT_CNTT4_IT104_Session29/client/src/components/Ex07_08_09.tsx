@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Pencil, Plus, Trash2 } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 type Student = {
   id: number;

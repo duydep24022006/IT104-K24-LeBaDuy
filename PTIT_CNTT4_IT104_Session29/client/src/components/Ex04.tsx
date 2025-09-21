@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 async function getAllStudent() {
   const res = await axios.get("http://localhost:8080/students");
