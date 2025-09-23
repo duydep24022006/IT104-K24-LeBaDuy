@@ -12,5 +12,5 @@ export const store = createStore(rootReducer, preloadedState);
 
 store.subscribe(() => {
   const state = store.getState();
-  saveCart(state.card.cart); 
+  saveCart(state.card.cart);
 });
