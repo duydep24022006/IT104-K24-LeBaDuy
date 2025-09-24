@@ -1,0 +1,22 @@
+{
+    "users":[
+        {
+            "id":1,
+            "name":"Duy"
+        },
+        {
+            "id":2,
+            "name":"Duy đẹp trai"
+        }
+    ],
+    "comments":[
+        {
+            "id":1,
+            "body":"some comment",
+            "postId":1
+        }
+    ],
+    "profile":{
+        "name":"typicode"
+    }
+}
