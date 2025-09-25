@@ -1,22 +1,22 @@
 {
-    "users":[
-        {
-            "id":1,
-            "name":"Duy"
-        },
-        {
-            "id":2,
-            "name":"Duy đẹp trai"
-        }
-    ],
-    "comments":[
-        {
-            "id":1,
-            "body":"some comment",
-            "postId":1
-        }
-    ],
-    "profile":{
-        "name":"typicode"
+  "task": [
+    {
+      "id": "1",
+      "title": "Học Redux Toolkit",
+      "completed": false,
+      "priority": "high"
+    },
+    {
+      "id": "1758758578241",
+      "title": "   dscfvsdf",
+      "completed": false,
+      "priority": "medium"
+    },
+    {
+      "id": "1758758579617",
+      "title": "sdfsdf",
+      "completed": false,
+      "priority": "medium"
     }
+  ]
 }
