@@ -1,6 +1,10 @@
 export interface Student {
-  id: string;
+  id?: string;
   name: string;
   age: number;
-  grade: string; // ex: "10A1"
+  grade: string;
+}
+
+export interface StudentState {
+  students: Student[];
 }

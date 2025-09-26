@@ -1,27 +1,39 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from "react";
 
-import { Button } from '@mui/material';
-import type { Student } from './features/students/types';
-import StudentForm from './features/students/StudentForm';
-import StudentList from './features/students/StudentList';
-import StudentSearchSortFilter from './features/students/StudentSearchSortFilter';
-
-const initialData: Student[] = [
-  { id: '1', name: 'Nguyễn Văn An', age: 16, grade: '10A1' },
-  { id: '2', name: 'Trần Thị Bình', age: 17, grade: '11B1' },
-  { id: '3', name: 'Lê Văn Cường', age: 15, grade: '10A2' },
-];
+import { Button } from "@mui/material";
+import type { Student } from "./features/students/types";
+import StudentForm from "./features/students/StudentForm";
+import StudentList from "./features/students/StudentList";
+import StudentSearchSortFilter from "./features/students/StudentSearchSortFilter";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  deleteStudent,
+  editStudent,
+  getAllStudents,
+  postStudent,
+} from "./store/slice/studnetSlice";
+import type { RootState } from "./store/store";
 
 const App: React.FC = () => {
-  const [students, setStudents] = useState<Student[]>(initialData);
-  const [openForm, setOpenForm] = useState(false);
-  const [editing, setEditing] = useState<Partial<Student> | undefined>(undefined);
+  const { students, loading, error } = useSelector(
+    (state: RootState) => state.student
+  );
 
-  // Search / filter / sort state
-  const [search, setSearch] = useState('');
-  const [gradeFilter, setGradeFilter] = useState<string>('all');
-  const [sortBy, setSortBy] = useState<'name' | 'age'>('name');
-  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc');
+  const dispatch: any = useDispatch();
+  useEffect(() => {
+    dispatch(getAllStudents());
+  }, []);
+  console.log(students);
+
+  const [openForm, setOpenForm] = useState(false);
+  const [editing, setEditing] = useState<Partial<Student> | undefined>(
+    undefined
+  );
+
+  const [search, setSearch] = useState("");
+  const [gradeFilter, setGradeFilter] = useState<string>("all");
+  const [sortBy, setSortBy] = useState<"name" | "age">("name");
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
 
   const grades = useMemo(() => {
     const g = Array.from(new Set(students.map((s) => s.grade))).sort();
@@ -40,18 +52,16 @@ const App: React.FC = () => {
     grade: string;
   }) => {
     if (data.id) {
-      // update
-      setStudents((prev) =>
-        prev.map((p) => (p.id === data.id ? ({ ...p, ...data } as Student) : p)),
-      );
+      dispatch(editStudent(data));
     } else {
-      // create
-      const id = Date.now().toString();
-      setStudents((prev) => [
-        { id, name: data.name, age: data.age, grade: data.grade },
-        ...prev,
-      ]);
+      const newStudent: Student = {
+        name: data.name,
+        age: data.age,
+        grade: data.grade,
+      };
+      dispatch(postStudent(newStudent));
     }
+
     setOpenForm(false);
   };
 
@@ -61,37 +71,36 @@ const App: React.FC = () => {
   };
 
   const handleDelete = (id: string) => {
-    if (!confirm('Xác nhận xóa học sinh?')) return;
-    setStudents((prev) => prev.filter((p) => p.id !== id));
+    if (!confirm("Xác nhận xóa học sinh?")) return;
+    dispatch(deleteStudent(id));
   };
 
   const handleClearFilters = () => {
-    setSearch('');
-    setGradeFilter('all');
-    setSortBy('name');
-    setSortDir('asc');
+    setSearch("");
+    setGradeFilter("all");
+    setSortBy("name");
+    setSortDir("asc");
   };
 
-  // Selector logic: apply search, filter, sort
   const filteredSorted = useMemo(() => {
     let out = students.slice();
 
     if (search.trim()) {
       const q = search.trim().toLowerCase();
-      out = out.filter((s) => s.name.toLowerCase().includes(q));
+      out = out.filter((s: Student) => s.name.toLowerCase().includes(q));
     }
 
-    if (gradeFilter !== 'all') {
-      out = out.filter((s) => s.grade === gradeFilter);
+    if (gradeFilter !== "all") {
+      out = out.filter((s: Student) => s.grade === gradeFilter);
     }
 
-    out.sort((a, b) => {
-      if (sortBy === 'name') {
+    out.sort((a: Student, b: Student) => {
+      if (sortBy === "name") {
         const r = a.name.localeCompare(b.name);
-        return sortDir === 'asc' ? r : -r;
+        return sortDir === "asc" ? r : -r;
       } else {
         const r = a.age - b.age;
-        return sortDir === 'asc' ? r : -r;
+        return sortDir === "asc" ? r : -r;
       }
     });
 
@@ -128,6 +137,7 @@ const App: React.FC = () => {
           students={filteredSorted}
           onEdit={handleEdit}
           onDelete={handleDelete}
+          loading={loading}
         />
       </div>
 
